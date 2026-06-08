@@ -1,4 +1,4 @@
-[README (1).md](https://github.com/user-attachments/files/28721933/README.1.md)
+[README.md](https://github.com/user-attachments/files/28721933/README.1.md)
 # Detector de Spam em Emails 📧
 
 Um sistema inteligente em Python que detecta automaticamente se uma mensagem de email é spam ou não, usando Machine Learning.
