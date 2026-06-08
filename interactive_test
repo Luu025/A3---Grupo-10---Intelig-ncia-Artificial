@@ -1,0 +1,96 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+"""
+Script interativo para testar o detector de spam
+Permite ao usuário inserir emails para análise
+"""
+
+from spam_detector import EmailSpamDetector
+
+def main():
+    detector = EmailSpamDetector()
+    
+    # Dados de treinamento
+    training_emails = [
+        # Emails legítimos
+        "Olá, gostaria de agendar uma reunião para discutir o projeto.",
+        "Relatório mensal disponível para download.",
+        "Confirmação de pedido número 12345.",
+        "Bem-vindo à nossa empresa, seu usuário foi criado com sucesso.",
+        "Reunião agendada para segunda-feira às 10:00.",
+        "Aqui está o documento que você solicitou.",
+        "Sua conta foi atualizada com sucesso.",
+        "Informações sobre benefícios dos funcionários.",
+        "Feedback sobre o projeto entregue.",
+        "Convite para a conferência anual.",
+        
+        # Emails de spam
+        "CLIQUE AQUI AGORA! Ganhe dinheiro rápido!!!",
+        "Você ganhou um prêmio! Verificar dados agora!",
+        "Oferta especial: desconto limitado para hoje apenas!",
+        "Ação urgente requerida! Confirme seus dados imediatamente!",
+        "Parabéns! Você é o grande vencedor! Reivindicar prêmio agora!",
+        "Dinheiro grátis! Clique aqui para receber seu bônus!",
+        "Oferta exclusiva: 70% de desconto, tempo limitado!",
+        "URGENTE: Atualizar informações bancárias agora!",
+        "Click here to claim your FREE prize!",
+        "Limited time offer - Act now! Don't miss out!",
+    ]
+    
+    training_labels = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+    
+    # Treinar modelo
+    print("=" * 70)
+    print(" " * 15 + "🔍 DETECTOR DE SPAM EM EMAILS 🔍")
+    print("=" * 70)
+    print("\n📚 Treinando o modelo com exemplos de emails...")
+    
+    detector.train(training_emails, training_labels)
+    detector.save_model()
+    
+    # Loop de testes
+    while True:
+        print("\n" + "=" * 70)
+        print("Digite 'sair' para finalizar")
+        print("=" * 70)
+        print("\n📧 Digite o conteúdo do email para análise:")
+        print("-" * 70)
+        
+        # Ler email multilinhas
+        linhas = []
+        print("(pressione Enter duas vezes para finalizar)")
+        
+        while True:
+            linha = input()
+            if linha.lower() == 'sair':
+                print("\n👋 Encerrando o programa...")
+                return
+            if linha == "":
+                if linhas and linhas[-1] == "":
+                    linhas.pop()
+                    break
+            linhas.append(linha)
+        
+        email_text = "\n".join(linhas).strip()
+        
+        if not email_text:
+            print("⚠️  Email vazio! Tente novamente.")
+            continue
+        
+        # Classificar
+        resultado = detector.classify_email(email_text)
+        
+        print("\n" + "-" * 70)
+        print(f"Mensagem: {email_text[:100]}..." if len(email_text) > 100 else f"Mensagem: {email_text}")
+        print("-" * 70)
+        print(f"✅ Resultado: {resultado}")
+        print("-" * 70)
+
+if __name__ == "__main__":
+    try:
+        main()
+    except KeyboardInterrupt:
+        print("\n\n👋 Programa interrompido pelo usuário.")
+    except Exception as e:
+        print(f"\n❌ Erro: {e}")
