@@ -3,7 +3,7 @@
 
 Um sistema inteligente em Python que detecta automaticamente se uma mensagem de email é spam ou não, usando Machine Learning.
 
-## 🚀 Funcionalidades
+## Funcionalidades
 
 - **Classificação Inteligente**: Usa Naive Bayes com TF-IDF para análise de texto
 - **Palavras-chave**: Detecta padrões comuns em emails de spam
@@ -11,7 +11,7 @@ Um sistema inteligente em Python que detecta automaticamente se uma mensagem de 
 - **Confiança**: Retorna nível de confiança da predição
 - **Fácil de usar**: Interface simples e intuitiva
 
-## � Quick Start (5 minutos)
+## Quick Start (5 minutos)
 
 ```bash
 # 1. Instalar dependências
@@ -26,7 +26,7 @@ python interactive_test.py
 
 ---
 
-## 📦 Instalação Detalhada
+## Instalação Detalhada
 
 ### Windows (PowerShell)
 ```powershell
@@ -59,7 +59,7 @@ python spam_detector.py
 
 ---
 
-## 📁 Estrutura de Arquivos
+## Estrutura de Arquivos
 
 ```
 A3IA/
@@ -72,9 +72,9 @@ A3IA/
 
 ---
 
-## 💻 Como Usar - Passo a Passo
+## Como Usar - Passo a Passo
 
-### ⚙️ Passo 1: Instalar as Dependências
+### Passo 1: Instalar as Dependências
 
 Abra o terminal/prompt de comando na pasta do projeto e execute:
 
@@ -86,7 +86,7 @@ pip install -r requirements.txt
 
 ---
 
-### 🚀 Passo 2: Executar o Script Automático
+### Passo 2: Executar o Script Automático
 
 Para testar o detector com exemplos prontos:
 
@@ -111,7 +111,7 @@ Resultado: SPAM (confiança: 66.64%)
 
 ---
 
-### 💬 Passo 3: Teste Interativo
+### Passo 3: Teste Interativo
 
 Para digitar seus próprios emails e testar:
 
@@ -139,7 +139,7 @@ OFERTA ESPECIAL! CLIQUE AQUI PARA GANHAR PRÊMIOS INCRÍVEIS!
 
 ---
 
-### 📝 Passo 4: Usar como Módulo em Seu Código
+### Passo 4: Usar como Módulo em Seu Código
 
 Crie um arquivo `meu_script.py` e adicione:
 
@@ -192,7 +192,7 @@ python meu_script.py
 
 ---
 
-### 🔄 Passo 5: Fluxo Completo de Uso
+### Passo 5: Fluxo Completo de Uso
 
 ```
 ┌─────────────────────────────────────┐
@@ -216,7 +216,7 @@ python meu_script.py
 
 ---
 
-### 📚 Referência Rápida dos Métodos
+### Referência Rápida dos Métodos
 
 | Método | Função | Exemplo |
 |--------|--------|---------|
@@ -226,7 +226,7 @@ python meu_script.py
 | `save_model()` | Salvar modelo | `detector.save_model()` |
 | `load_model()` | Carregar modelo | `detector.load_model()` |
 
-## 📊 Exemplos Práticos de Detecção
+## Exemplos Práticos de Detecção
 
 ### Exemplo 1: Email Legítimo
 ```
@@ -258,7 +258,7 @@ Motivo: Palavras-chave: "oferta", "desconto limitado", "ação"
 
 ---
 
-## ⚙️ Tabela de Palavras-Chave Detectadas
+## Tabela de Palavras-Chave Detectadas
 
 O sistema detecta automaticamente essas palavras/frases comuns em spam:
 
@@ -287,7 +287,7 @@ O sistema detecta automaticamente essas palavras/frases comuns em spam:
 - **`save_model()`**: Salva o modelo treinado
 - **`load_model()`**: Carrega modelo previamente treinado
 
-## 🎯 Características de Detecção
+## Características de Detecção
 
 O detector verifica:
 
@@ -299,7 +299,7 @@ O detector verifica:
 2. **Análise de Texto (TF-IDF)**: Análise estatística do conteúdo
 3. **Classificação (Naive Bayes)**: Algoritmo de aprendizado de máquina
 
-## � Solução de Problemas
+## Solução de Problemas
 
 ### Problema: "ModuleNotFoundError: No module named 'sklearn'"
 **Solução:**
@@ -325,7 +325,7 @@ python --version
 
 ---
 
-## 📝 Notas
+## Notas
 
 - O modelo atual é treinado com 20 exemplos simples
 - Para melhor precisão, treine com centenas ou milhares de emails reais
